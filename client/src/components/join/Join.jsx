@@ -10,7 +10,7 @@ export default function Join({setChatVisibility, setSocket}) {
     const handleSubmit = async () => {
         const username = usernameRef.current.value
         if(!username.trim()) return
-        const socket = await io.connect('https://chat-backend-9vaz.onrender.com')
+        const socket = await io.connect('http://localhost')
         socket.emit('set_username', username)
         setSocket(socket)
         setChatVisibility(true)
